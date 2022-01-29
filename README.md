@@ -3,7 +3,10 @@ This program aims to create a multi-page "CRUD" site (Create, Read, Update, Dele
 
 ## Course Website
 It has been already been uploaded to my school website:  
-https://i6.cims.nyu.edu/~st3890/webdev/macro08/index.php  
+https://i6.cims.nyu.edu/~st3890/webdev/macro08/index.php    
+You could login to the admin account and then change all text among the websites:  
+username: dumbledore  
+password: phoenix1  
 
 ## Requirements
 Task #1: Dynamic Page Content
@@ -13,10 +16,6 @@ Task #1: Dynamic Page Content
 - If the site administrator ever changes these files these pages should automatically update with the new content without having to edit the PHP files.
 
 - You can test your work by visiting your site in the browser - when you visit any of these pages the contents from the related text file should appear on the page.
-
-	- Hint: use the 'include' function to do this.
-	- Hint: look at the first few lines in 'index.php' - you will see that you are already including 'config.php' - this means that any variables defined in 'config.php are available to your program already, including '$file_path'
-
 
 
 Task #2: Emergency Alert System
@@ -30,12 +29,6 @@ Task #2: Emergency Alert System
 - If the contents of the file is empty you should not show anything on the page.
 
 - Test your work by repeatedly editing this file - if you put text into it and refresh a page you should see the alert show up.  If you delete the contents of this file you should see no alert box when you refresh the page.
-
-	- Hint: use 'file_get_contents' to get the contents of the file
-	- Hint: test the data in the file to make sure it is not empty using an 'if' statement
-
-
-
 
 
 Task #3: User Login System
@@ -66,12 +59,7 @@ Task #3: User Login System
 
 	- If the supplied an incorrect username & password you should just redirect the user's browser to 'admin.php' without setting a cookie. Send back an error message using a GET variable too.
 
-	- Check your work! See if you have a cookie set by opening up your developer's console in your browser
-
 	- Edit 'admin.php' to look for the presence of this cookie using the $_COOKIE superglobal.  If it exists, display a 'Welcome' message to the user instead of the login form.  Welcome the user by name using the cookie you set to hold their first & last name (i.e. the page should read "Welcome Albus Dumbledore!"
-
-
-
 
 
 Task #4: Logout
@@ -87,9 +75,6 @@ Task #4: Logout
 - Redirect the user back to 'admin.php' when this is done - the page will reload, and the login form should appear again
 
 - Make a special message show up indicating that the user has logged out (Hint: use the GET method to send a variable to 'admin.php' telling it that you just logged the user out.  For example:  admin.php?action=loggedout)
-
-
-
 
 
 Task #5: Content Management System
@@ -121,10 +106,6 @@ Task #5: Content Management System
 - Once the system works you can add in confirmation message letting the user know that their changes have been saved (using the GET method described in the previous task)
 
 
-
-
-
-
 Task #6: Multiple Administrator Support
 
 - Next, we are going to open up the site so that multiple administrators can log in and use the system.
@@ -146,10 +127,6 @@ Task #6: Multiple Administrator Support
 	- Text to see if the incoming username/password combination matches the account you are currently examining.  If so, you can set a cookie and redirect the user.  You can simply end the program here by calling the 'exit' function or using the 'break' statement to stop the loop.
 
 
-
-
-
-
 Task #7: Administrator Logging System
 
 - When an administrator successfully logs in you should log this activity into a new file called 'adminlog.txt'
@@ -167,11 +144,6 @@ CURRENT_TIME,dumbledore,login
 - Once this works update your system so that the website logs every time the user logs out as well as when they make a change to the site's contents.
 
 
-
-
-
-
-
 Task #8: Administrator View Login History
 
 - On the 'admin.php' page, add in a link to a new page called 'admin_report.php' - this link should only be displayed if there is a logged in user.
@@ -182,9 +154,4 @@ Task #8: Administrator View Login History
 
 	- If the user is logged in the page should access the 'adminlog.txt' file and display all of the records to the user using a table.  Hint: create a table tag with the appropriate # of columns in regular HTML.  Then process your data by splitting it accordingly.  Print out the data inside of a 'for' loop using the approbate "td" and "tr" tags.
 
-	- Hint: you can covert a UNIX timestamp into a human readable date using PHP's 'date' function, like this:  date('Y-m-d H:i:s', TIMESTAMP);
-
-
-
-
- 
+	
